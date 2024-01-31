@@ -10,14 +10,6 @@ header {
 }
 
 /* 小見出し */
-.sub-heading {
-  display: flex;
-  margin: auto 0;
-}
-
-.sub-heading h2 {
-  flex: left;
-}
 
 
 .table {
@@ -196,26 +188,23 @@ button {
 }
 
 #search {
-  align-items: center;
-  padding: 15px;
-  border-radius: 3px;
   font-size: 18px;
   display: flex;
-  float: right;
 }
 
-#search form {
-  position: relative;
+#search-form {
+  display: flex;
   background-color: #fff;
-
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
 }
 
-#search form input {
+#search-input {
   width: 100%;
   border-color: #4169e1;
-}
-
-input {
   padding-left: 3px;
   border: 0.5px solid rgb(146, 146, 146);
   border-radius: 3px;
@@ -225,21 +214,16 @@ input {
 .search-button {
   height: 19px;
   width: 50px;
+  font-size: 13px;
   background-color: #4169e1;
   color: #fff;
-  right: 0;
-  margin-top: 0;
+  margin: 0 auto;
   padding: 0;
   border: 0.5px solid rgb(146, 146, 146);
   border-radius: 3px;
 }
 
-.search-st {
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.search-st {}
 
 a {
   height: 100%;

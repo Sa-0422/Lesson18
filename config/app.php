@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
 
+        //カスタムル～ルの使用
+        App\Providers\CustomServiceProvider::class,
     ],
 
     /*

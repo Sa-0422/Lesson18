@@ -36,6 +36,16 @@
       <!--HTMLで書き換えると
        <input type="text" name="newPost" required class="form-control" placeholder="投稿内容">の意味 -->
 
+      <!-- エラーメッセージの表示 -->
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
 
     </div>
 
