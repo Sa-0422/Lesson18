@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<!-- resouces/views/layoutsに格納 -->
 
 @section('content')
 <div class="container">
