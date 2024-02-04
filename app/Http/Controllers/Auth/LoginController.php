@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use resources\views\posts;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 
 class LoginController extends Controller
 {
@@ -28,7 +30,16 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/index';
-    //↑1行コメントアウト
+
+
+    protected function validater(array $data)
+    {
+        return Validator::make($data, [
+            'email' => ['required', 'string', 'email', 'max:150',],
+            'password' => ['required', 'string', 'min:6',],
+        ]);
+    }
+
 
 
 

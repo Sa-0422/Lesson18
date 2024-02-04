@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -34,7 +35,9 @@ class RegisterController extends Controller
     // ログイン後のリダイレクト先を記述
     public function redirectPath()
     {
-        return '/';
+        // ログアウトしてからログイン画面にリダイレクト
+        Auth::logout();
+        return route('login');
     }
 
     /**
@@ -56,7 +59,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'space', 'string', 'max:150'],
+            'name' => ['required', 'space', 'string', 'max:150', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:150', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ], [
